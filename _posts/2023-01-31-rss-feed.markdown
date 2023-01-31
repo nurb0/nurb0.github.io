@@ -1,0 +1,19 @@
+---
+layout: post
+title: The Magic of RSS
+---
+
+### Prelude
+I haven't used RSS or RSS readers since Google Reader and in general I'm trying to practice information diet these days. To keep this blog alive though, I need to draw inspiration and ideas from somewhere so I decided to sign up for Feedly, which seems to be the most popular RSS reader these days. As I was configuring my feed, I realized I have never really thought about how RSS works.
+
+### Who Feeds RSS?
+An RSS feed is a document that usually lives under the /feed path (rarer under /rss) of a website but can be placed anywhere. The document defines the web resource, its metadata and its content in an XML format. As you publish new content, e.g. blog posts, the feed gets updated by your blog software. Jekyll does this for me every time I run `jekyll build` command but if you are not using any software to publish your blog, you can keep that document up to date yourself.
+
+### How Is My Feed Magically Up to Date?
+There is no magic when it comes to your reader showing all the new content from the RSS feeds you subscribed to. Your reader just regularly polls the RSS feeds of all your RSS subscriptions and displays any new content it discovers. The reader only needs to fetch once per resource, so if many of its users subscribe to the same popular feeds, which is probably the case, it can show the updated content to all the subscribers without additional polling.
+
+### Reading Locally vs in the Cloud
+The reader doesn't have to be some kind of a third-party service. Any software, including your browser, that can fetch and parse an XML file can act as your reader. There are popular extensions, desktop and mobile apps that can do this for you. I decided to go with a web-based reader as it's convenient to use across devices and it can also suggest some feeds I might be interested in based on what other people are reading.
+
+### Is RSS Feed Just a Rudimentary API?
+You can think of RSS feed of your blog as a standard index endpoint (in REST) for your posts which returns data in XML format and has predefined names for the all the metadata and post fields. It's not quite static API, as the content of the feed (hopefully) changes over time.
